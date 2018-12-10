@@ -1,2 +1,20 @@
 server:
-  8080
+  port: 8080
+  # 配置第一个数据源
+spring:
+  datasource:
+    hikari:
+      db1:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT%2B8
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+  # 配置第二个数据源
+  spring:
+    datasource:
+      hikari:
+        db2:
+          jdbc-url: jdbc:mysql://127.0.0.1:3306/test2?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT%2B8
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
